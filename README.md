@@ -8,9 +8,9 @@ A basic library for managing event driven code in Pebble watchapps and watchface
 
 The `event_manager_create` method allocates memory for a new EventManager and returns a pointer to the object.
 
-### void event_manager_destroy(EventMnager* this)
+### void event_manager_destroy(EventManager* this)
 
-The `event_manager_destory` method deallocates all of the memory used by the EventManager (including all associated events) passed in as the first parameter, and sets the pointer to null.
+The `event_manager_destory` method deallocates all of the memory used by the EventManager *this* (including all associated events), and sets the pointer to null.
 
 ### void event_manager_subscribe(EventManager* this, int key, EventCallback callback)
 
@@ -18,13 +18,17 @@ The `event_manager_subscribe` method adds a new event (indicated by the *key* pa
 
 ### void event_manager_unsubscribe(EventManager* this, int key)
 
-The `event_manager_unsubscribe` method removes an event (indicated by the *key* parameter) from the event manager.
+The `event_manager_unsubscribe` method removes an event associated with *key* from the event manager.
 
 ### bool event_manager_raise_event(EventManager* this, int key)
 The `event_manager_raise_event` method results in the event associated with the *key* having it's callback invoked with a `NULL` pointer as the data.
 
+This method will `true` if an event associated with *key* was found, and `false` otherwise.
+
 ### bool event_manager_raise_event_with_context(EventManager* this, int key, void* data)
 The `event_manager_raise_event_with_context` method results in the event associated with the *key* having it's callback invoked with *data* as the data.
+
+This method will `true` if an event associated with *key* was found, and `false` otherwise.
 
 ## Example
 
