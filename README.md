@@ -14,7 +14,7 @@ The `event_manager_destory` method deallocates all of the memory used by the Eve
 
 ### void event_manager_subscribe(EventManager* this, int key, EventCallback callback)
 
-The `event_manager_subscribe` method adds a new event (indicated by the *key* parameter) to the event_manager. When the event is triggered with [event_manager_raise_event](), or [event_manager_raise_event_with_context], the callback, a `void` function with a single parameter (a void pointer), will be invoked.
+The `event_manager_subscribe` method adds a new event (indicated by the *key* parameter) to the event_manager. When the event is triggered with [event_manager_raise_event](#bool-event_manager_raise_eventeventmanager-this-int-key), or [event_manager_raise_event_with_context](#bool-event_manager_raise_event_with_contexteventmanager-this-int-key-void-data), the callback, a `void` function with a single parameter (a void pointer), will be invoked.
 
 ### void event_manager_unsubscribe(EventManager* this, int key)
 
