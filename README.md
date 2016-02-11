@@ -1,4 +1,4 @@
-# EventManager for Pebble
+# EventManager
 
 A basic library for managing event driven code in Pebble watchapps and watchfaces.
 
