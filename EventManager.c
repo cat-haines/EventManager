@@ -1,3 +1,4 @@
+#include "pebble.h"
 #include "EventManager.h"
 
 static EventNode* event_node_create(int event_key, EventCallback callback) {
@@ -16,7 +17,7 @@ static EventNode* event_manager_find_event(EventManager* this, int event_key) {
   if (!this) return NULL;
 
   EventNode* event = this->head;
-  
+
   while(event) {
     // Return the event if we found it
     if (event->event_key == event_key) return event;

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "pebble.h"
-
 typedef void (*EventCallback)(void *);
 
 typedef struct EventNode {
