@@ -1,6 +1,9 @@
 #include "pebble.h"
 #include "EventManager.h"
 
+#define false 0
+#define true 1
+
 static EventNode* event_node_create(int event_key, EventCallback callback) {
   // Allocate some heap space and set default value
   EventNode* this = malloc(sizeof(EventNode));
@@ -106,12 +109,12 @@ void event_manager_unsubscribe(EventManager* this, int event_key) {
   free(event);
 }
 
-bool event_manager_raise_event(EventManager* this, int event_key) {
+int event_manager_raise_event(EventManager* this, int event_key) {
   // convienience function for when we don't have data
   return event_manager_raise_event_with_context(this, event_key, NULL);
 }
 
-bool event_manager_raise_event_with_context(EventManager* this, int event_key, void* context) {
+int event_manager_raise_event_with_context(EventManager* this, int event_key, void* context) {
   // Make sure we don't have a NULL pointer
   if (!this) return false;
 

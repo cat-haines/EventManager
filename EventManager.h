@@ -21,6 +21,5 @@ void event_manager_destroy(EventManager* events);
 void event_manager_subscribe(EventManager* events, int event_key, EventCallback callback);
 void event_manager_unsubscribe(EventManager* events, int event_key);
 
-bool event_manager_raise_event(EventManager* events, int event_key);
-bool event_manager_raise_event_with_context(EventManager* events, int event_key, void* context);
-
+int event_manager_raise_event(EventManager* events, int event_key);
+int event_manager_raise_event_with_context(EventManager* events, int event_key, void* context);
